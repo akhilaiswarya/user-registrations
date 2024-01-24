@@ -133,4 +133,4 @@ EMAIL_HOST_USER='aishwarya1403ca@gmail.com'
 EMAIL_HOST_PASSWORD='vxtu ulum tvoz nmxe'
 EMAIL_USE_TLS=True
 EMAIL_USE_SSL=False
-WMAIL_PORT=587
+EMAIL_PORT=587
