@@ -90,3 +90,20 @@ def change_password(request):
         return HttpResponse('Password has changed successfully')
     
     return render(request,'change_password.html')
+
+
+def reset_password(request):
+    if request.method=='POST':
+        username=request.POST['un']
+        password=request.POST['pw']
+
+        LUO=User.objects.filter(username=username)
+        if LUO:
+            LUO=LUO[0]
+            LUO.set_password(password)
+            LUO.save()
+            return HttpResponse('Reset is done')
+        else:
+            return HttpResponse('Your username is not in our database')
+        
+    return render(request,'reset_password.html')
